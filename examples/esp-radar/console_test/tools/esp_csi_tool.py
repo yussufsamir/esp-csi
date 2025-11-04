@@ -1049,7 +1049,7 @@ class DataHandleThread(QThread):
 
 def serial_handle(queue_read, queue_write, port):
     try:
-        ser = serial.Serial(port=port, baudrate=2000000,
+        ser = serial.Serial(port=port, baudrate=115200,
                             bytesize=8, parity='N', stopbits=1, timeout=0.1)
     except Exception as e:
         print(f"serial_handle: {e}")

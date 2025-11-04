@@ -19,7 +19,7 @@
 #include "esp_netif.h"
 #include "esp_now.h"
 
-#define CONFIG_LESS_INTERFERENCE_CHANNEL   11
+#define CONFIG_LESS_INTERFERENCE_CHANNEL   6
 
 #if CONFIG_IDF_TARGET_ESP32C5 || CONFIG_IDF_TARGET_ESP32C6
     #define CONFIG_WIFI_BAND_MODE   WIFI_BAND_MODE_2G_ONLY
@@ -33,7 +33,7 @@
 #endif
 
 #define CONFIG_ESP_NOW_RATE             WIFI_PHY_RATE_MCS0_LGI
-#define CONFIG_SEND_FREQUENCY               20
+#define CONFIG_SEND_FREQUENCY               50
 
 static const uint8_t CONFIG_CSI_SEND_MAC[] = {0x1a, 0x00, 0x00, 0x00, 0x00, 0x00};
 static const char *TAG = "csi_send";
@@ -135,7 +135,7 @@ void app_main()
         .channel   = CONFIG_LESS_INTERFERENCE_CHANNEL,
         .ifidx     = WIFI_IF_STA,    
         .encrypt   = false,   
-        .peer_addr = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff},
+        .peer_addr = {0xF8, 0xB3, 0xB7, 0x22, 0x3C, 0xF0},
     };
     wifi_esp_now_init(peer);
 

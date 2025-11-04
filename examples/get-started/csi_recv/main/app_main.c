@@ -20,7 +20,7 @@
 #include "esp_netif.h"
 #include "esp_now.h"
 
-#define CONFIG_LESS_INTERFERENCE_CHANNEL   11
+#define CONFIG_LESS_INTERFERENCE_CHANNEL   6
 #if CONFIG_IDF_TARGET_ESP32C5 || CONFIG_IDF_TARGET_ESP32C6
     #define CONFIG_WIFI_BAND_MODE   WIFI_BAND_MODE_2G_ONLY
     #define CONFIG_WIFI_2G_BANDWIDTHS           WIFI_BW_HT20
@@ -162,9 +162,7 @@ static void wifi_csi_rx_cb(void *ctx, wifi_csi_info_t *info)
         return;
     }
 
-    if (memcmp(info->mac, CONFIG_CSI_SEND_MAC, 6)) {
-        return;
-    }
+
 
     wifi_pkt_rx_ctrl_phy_t *phy_info = (wifi_pkt_rx_ctrl_phy_t *)info;
     static int s_count = 0;

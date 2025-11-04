@@ -13,3 +13,4 @@ project(${CURDIR})
 
 git_describe(PROJECT_VERSION ${COMPONENT_DIR})
 message("Project commit: " ${PROJECT_VERSION})
+set(EXTRA_COMPONENT_DIRS "C:/Users/Lenovo/Espressif/frameworks/esp-idf-v5.3.1/examples/common_components")

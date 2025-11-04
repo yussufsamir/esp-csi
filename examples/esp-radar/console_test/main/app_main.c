@@ -575,6 +575,7 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base,
 
 void app_main(void)
 {
+    
     /**
      * @brief Install ws2812 driver, Used to display the status of the device
      */
